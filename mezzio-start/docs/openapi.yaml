@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: Mezzio Start
+  version: 1.0.0
+  contact:
+    name: Eduardo Bona
+    email: eduardobona@vivaweb.net
+  description: Mezzio Start Desc
+tags:
+  - name: quick-start
+paths:
+  "/podcasts":
+    get:
+      operationId: get-podcasts
+      sumary: Lista de Podcasts
+      description: Retorna relatório de Podcasts
+      tags:
+        - podcasts
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                x-count: 15
+                items:
+                  type: object
+                  properties:
+                    idPodcast:
+                      type: int
+                      example: 1
+                    dataUltimaAtualizacao:
+                      type: string
+                      example: 2021-05-01 10:00
+                    nmTitulo:
+                      type: string
+                      example: Vida de Programador
